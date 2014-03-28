@@ -582,6 +582,9 @@
       path = path.replace(/^\/[a-zA-Z]:\//, '/');
     }
 
+    // patch for browsers returning wrong pathnames
+    if (path[0] !== '/') path = '/' + path;
+
     // same page
     var orig = path;
 
